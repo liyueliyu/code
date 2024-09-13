@@ -13,6 +13,7 @@
 import Menu from "./Menu.vue";
 import { defineProps, computed } from "vue";
 import Banner from "./Banner.vue";
+import Playlist from "./Playlist.vue";
 
 const blcoktypeComponentMap = {
   HOMEPAGE_BANNER: Banner,
@@ -22,7 +23,7 @@ const blcoktypeComponentMap = {
   // HOMEPAGE_BLOCK_NEW_HOT_COMMENT: "热门评论",
   // HOMEPAGE_BLOCK_OFFICIAL_PLAYLIST: "官方歌单",
   HOMEPAGE_BLOCK_OLD_DRAGON_BALL: Menu,
-  // HOMEPAGE_BLOCK_PLAYLIST_RCMD: "推荐歌单",
+  HOMEPAGE_BLOCK_PLAYLIST_RCMD: Playlist,
   // HOMEPAGE_BLOCK_STYLE_RCMD: "",
   // HOMEPAGE_BLOCK_VIDEO_PLAYLIST: "",
   // HOMEPAGE_BLOCK_YUNCUN_PRODUCED: "",
@@ -48,6 +49,16 @@ const propsData = computed(() => {
       }));
     case "HOMEPAGE_BANNER":
       return props.data.extInfo.banners.map((item) => item.pic);
+    case "HOMEPAGE_BLOCK_PLAYLIST_RCMD":
+      return {
+        name: props.data.uiElement.subTitle.title,
+        children: props.data.creatives.map((item) => ({
+          id: item.resources[0].resourceId,
+          playCount: item.resources[0].resourceExtInfo.playCount,
+          imageUrl: item.resources[0].uiElement.image.imageUrl,
+          title: item.resources[0].uiElement.mainTitle.title,
+        })),
+      };
     default:
       return null;
   }
