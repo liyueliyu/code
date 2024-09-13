@@ -12,7 +12,7 @@
 <script setup>
 import Menu from "./Menu.vue";
 import { defineProps, computed } from "vue";
-import Banner from "./Banner.vue"
+import Banner from "./Banner.vue";
 
 const blcoktypeComponentMap = {
   HOMEPAGE_BANNER: Banner,
@@ -40,17 +40,20 @@ const props = defineProps({
 });
 
 const propsData = computed(() => {
-  if (props.data.blockCode === "HOMEPAGE_BLOCK_OLD_DRAGON_BALL") {
-    return props.data.creatives[0].resources.map((item) => ({
-      name: item.uiElement.mainTitle.title,
-      iconUrl: item.uiElement.image.imageUrl,
-    }));
-  } if(props.data.blockCode ==="HOMEPAGE_BANNER") {
-    return props  ;
+  switch (props.data.blockCode) {
+    case "HOMEPAGE_BLOCK_OLD_DRAGON_BALL":
+      return props.data.creatives[0].resources.map((item) => ({
+        name: item.uiElement.mainTitle.title,
+        iconUrl: item.uiElement.image.imageUrl,
+      }));
+    case "HOMEPAGE_BANNER":
+      return props.data.extInfo.banners.map((item) => item.pic);
+    default:
+      return null;
   }
 });
 
-// console.log(props.data);
-console.log("blocktype", propsData);
+console.log(props.data);
+// console.log("blocktype", propsData);
 </script>
 <style scoped></style>
