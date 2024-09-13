@@ -1,31 +1,37 @@
 <template>
   <div>
-    <Menu :menu="menu" />
-
-    <!-- <BlockType
-      v-for="item on pageData"
+    <!-- <Menu :menu="menu"></Menu> -->
+    <BlockType
+      v-for="item in pageData"
       :data="item"
       :key="item.blockCode"
-    ></BlockType> -->
+    ></BlockType>
   </div>
 </template>
 <script setup>
 import { ref } from "vue";
 import { getHomePageData } from "../api";
-import Menu from "./children/Menu.vue";
-// import BlockType from "./children/BlockType.vue";
+// import Menu from "./children/Menu.vue";
+import BlockType from "./children/BlockType.vue";
 
-const menu = ref([]);
+// const menu = ref([]);
 const pageData = ref([]);
 getHomePageData().then((res) => {
+  // console.log(
+  //   res.data.data.blocks.reduce((prev, current) => {
+  //     prev[current.blockCode] = "";
+  //     return prev;
+  //   }, {})
+  // );
+
   pageData.value = res.data.data.blocks;
   //对后台返回的数据进行预处理，适配组件的props
-  menu.value = res.data.data.blocks
-    .find((item) => item.blockCode === "HOMEPAGE_BLOCK_OLD_DRAGON_BALL")
-    .creatives[0].resources.map((item) => ({
-      name: item.uiElement.mainTitle.title,
-      iconUrl: item.uiElement.image.imageUrl,
-    }));
+  // menu.value = res.data.data.blocks
+  //   .find((item) => item.blockCode === "HOMEPAGE_BLOCK_OLD_DRAGON_BALL")
+  //   .creatives[0].resources.map((item) => ({
+  //     name: item.uiElement.mainTitle.title,
+  //     iconUrl: item.uiElement.image.imageUrl,
+  //   }));
 });
 </script>
 

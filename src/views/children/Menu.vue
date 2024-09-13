@@ -1,8 +1,8 @@
 <template>
-  <div class="flex" :style="`width:${menu.length * 20}vw`">
+  <div class="flex" :style="`width:${props.data.length * 20}vw`">
     <div
       @click="emit('click', item, index)"
-      v-for="(item, index) in props.menu"
+      v-for="(item, index) in props.data"
       :key="item.name"
       class="flex flex-col items-center w-[20vw]"
     >
@@ -19,15 +19,19 @@
   </div>
 </template>
 <script setup>
-import { defineProps, defineEmits } from "vue";
+import { defineProps, defineEmits,onMounted } from "vue";
 
 const props = defineProps({
-  menu: {
+  data: {
     type: Array,
     Required: true,
   },
 });
 const emit = defineEmits(["click"]);
+onMounted(()=>{
+  console.log(props.data);
+  
+})
 </script>
 
 <style scoped>
