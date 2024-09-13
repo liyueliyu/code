@@ -1,15 +1,25 @@
 <template>
-  <Menu :menu="menu" />
+  <div>
+    <Menu :menu="menu" />
+
+    <!-- <BlockType
+      v-for="item on pageData"
+      :data="item"
+      :key="item.blockCode"
+    ></BlockType> -->
+  </div>
 </template>
 <script setup>
 import { ref } from "vue";
 import { getHomePageData } from "../api";
 import Menu from "./children/Menu.vue";
+// import BlockType from "./children/BlockType.vue";
 
 const menu = ref([]);
 const pageData = ref([]);
 getHomePageData().then((res) => {
   pageData.value = res.data.data.blocks;
+  //对后台返回的数据进行预处理，适配组件的props
   menu.value = res.data.data.blocks
     .find((item) => item.blockCode === "HOMEPAGE_BLOCK_OLD_DRAGON_BALL")
     .creatives[0].resources.map((item) => ({

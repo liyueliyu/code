@@ -1,5 +1,5 @@
 <template>
-  <HomePage />
+  <HomePage></HomePage>
   <!-- <Menu /> -->
 </template>
 <script setup>

@@ -14,7 +14,7 @@
           >{{ new Date().getDate() }}</span
         >
       </div>
-      <span class="text-[2.99vw] text-[#576c6c]">{{ item.name }}</span>
+      <span class="text-[2.99vw] text-[#676c6c]">{{ item.name }}</span>
     </div>
   </div>
 </template>
@@ -32,6 +32,6 @@ const emit = defineEmits(["click"]);
 
 <style scoped>
 .filter {
-filter: url("data:image/svg+xml;utf8,<svg xmlns=%27http://www.w3.org/2000/svg%27><filter id=%27colorize%27><feColorMatrix type='matrix' values='1 0 0 0 0.698 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0'/></filter></svg>#colorize");
+  filter: url("data:image/svg+xml;utf8,<svg xmlns=%27http://www.w3.org/2000/svg%27><filter id=%27colorize%27><feColorMatrix type='matrix' values='1 0 0 0 0.698 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0'/></filter></svg>#colorize");
 }
 </style>
