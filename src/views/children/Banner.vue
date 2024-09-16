@@ -1,10 +1,8 @@
 <template>
-  <div>
-    <Swiper loop autoplay pagination
-      :modules="[Autoplay, Pagination]"
-    >
+  <div class="p-[4vw]">
+    <Swiper loop autoplay pagination :modules="[Autoplay, Pagination]">
       <SwiperSlide v-for="item in props.data" :key="item">
-        <img :src="item" alt="" />
+        <img :src="item" alt="" class="rounded-md" />
       </SwiperSlide>
     </Swiper>
   </div>

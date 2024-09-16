@@ -23,7 +23,6 @@ getHomePageData().then((res) => {
   //     return prev;
   //   }, {})
   // );
-
   pageData.value = res.data.data.blocks;
   //对后台返回的数据进行预处理，适配组件的props
   // menu.value = res.data.data.blocks

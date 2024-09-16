@@ -5,23 +5,31 @@
     @clickTitle="titleHandler()"
   >
     <BetterScroll
-      :config="{ scrollX: true, scrollY: false, click: true }"
+      :config="{ scrollX: false, scrollY: true, click: true }"
       :dep="props.data"
     >
       <div
         @click="clickHandler(item)"
         v-for="item in props.data.children"
         :key="item.id"
-        class="w-[35.812vw]"
+        class="w-[85vw] h-[15vw]"
       >
         <img
-          class="w-[32vw] h-[32vw] rounded-sm ml-[4vw]"
-          :src="item.imageUrl"
+          class="w-[15vw] h-[15vw] rounded-sm ml-[4vw] mt-[5vw]"
+          :src="item.img"
           alt=""
         />
-        <div class="w-[30vw] h-[10vw] ml-[4vw] text-xs">
+        <div
+          class="line-clamp-2q w-[45vw] h-[5vw] text-xs text-[#ea4d44] font-bold ml-[22vw] mt-[-3vw]"
+        >
           {{ item.title }}
         </div>
+        <div
+          class="line-clamp-2q w-[40vw] h-[5vw] text-sm text-[#7c818e] ml-[50vw] mt-[-5vw]"
+        >
+          {{ item.artist }}
+        </div>
+        <div class="ml-[23vw] mt-[-15vw] text-[#3f4b59]">{{ item.song }}</div>
       </div>
     </BetterScroll>
   </Wrapper>

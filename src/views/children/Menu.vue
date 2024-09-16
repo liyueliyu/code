@@ -1,4 +1,4 @@
-<!-- eslint-disable max-len -->
+
 <template>
   <BetterScroll :config="{ scrollX: true, scrollY: false }" :dep="props.data">
     <div
