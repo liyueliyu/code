@@ -10,9 +10,9 @@
 </template>
 <script setup>
 import { ref } from "vue";
-import { getHomePageData } from "../api";
+import { getHomePageData } from "@/api";
 // import Menu from "./children/Menu.vue";
-import BlockType from "./children/BlockType.vue";
+import BlockType from "@/views/children/BlockType.vue";
 
 // const menu = ref([]);
 const pageData = ref([]);

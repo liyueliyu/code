@@ -25,4 +25,12 @@ module.exports = {
     "import/no-extraneous-dependencies": "off",
     "vue/multi-word-component-names": "off",
   },
+  settings: {
+    "import/resolver": {
+      alias: {
+        map: [["@", "./src"]],
+        extensions: [".js", ".jsx", ".ts", ".tsx", ".json"],
+      },
+    },
+  },
 };

@@ -10,11 +10,10 @@
 </template>
 
 <script setup>
-import Menu from "./Menu.vue";
 import { defineProps, computed } from "vue";
-import Banner from "./Banner.vue";
-import Playlist from "./Playlist.vue";
-
+import Menu from "@/views/children/Menu.vue";
+import Banner from "@/views/children/Banner.vue";
+import Playlist from "@/views/children/Playlist.vue";
 const blcoktypeComponentMap = {
   HOMEPAGE_BANNER: Banner,
   // HOMEPAGE_BLOCK_HOT_TOPIC: "热门话题",
