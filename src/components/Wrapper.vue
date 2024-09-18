@@ -6,10 +6,10 @@
         class="text-[#3e4659] font-bold pl-[4vw]"
         >{{ props.title }}</span
       >
-      <Icon
+      <!-- <Icon
         icon="ep:arrow-right"
         class="text-[#53596a] absolute left-[23%] top-[59%]"
-      />
+      /> -->
       <Icon
         @click="emit('clickMore')"
         icon="ri:more-2-fill"

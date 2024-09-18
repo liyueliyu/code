@@ -64,11 +64,10 @@ const propsData = computed(() => {
       return {
         name: props.data.uiElement.subTitle.title,
         children: props.data.creatives.map((item) => ({
-          id: item.resources[0].resourceExtInfo.resourceId,
+          id: item.resources[0].resourceId,
           img: item.resources[0].uiElement.image.imageUrl,
           title: item.resources[0].uiElement.subTitle.title,
           artist: item.resources[0].resourceExtInfo.artists[0].name,
-          // song: item.resources[0].resourceExtInfo.songData.name,
           song: item.resources[0].uiElement.mainTitle.title,
         })),
       };
@@ -76,7 +75,7 @@ const propsData = computed(() => {
       return {
         name: props.data.uiElement.subTitle.title,
         children: props.data.creatives.map((item) => ({
-          id: item.resources[0].resourceExtInfo.resourceId,
+          id: item.resources[0].resourceId,
           img: item.resources[0].uiElement.image.imageUrl,
           title: item.resources[0].uiElement.subTitle.title,
           artist: item.resources[0].resourceExtInfo.artists[0].name,

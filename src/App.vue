@@ -19,54 +19,12 @@
     />
   </div>
   <HomePage></HomePage>
-  <div class="btom">
-    <ul>
-      <li>
-        <Icon
-          icon="ri:netease-cloud-music-fill"
-          style="color: #e72323"
-          class="w-[10vw] h-[10vw]"
-        />
-        <span> 发现</span>
-      </li>
-      <li>
-        <Icon
-          icon="ri:netease-cloud-music-fill"
-          style="color: #9195a0"
-          class="w-[10vw] h-[10vw]"
-        />
-        <span>播客</span>
-      </li>
-      <li>
-        <Icon
-          icon="carbon:music"
-          style="color: #9195a0"
-          class="w-[10vw] h-[10vw]"
-        />
-        <span>我的</span>
-      </li>
-      <li>
-        <Icon
-          icon="ri:netease-cloud-music-fill"
-          style="color: #9195a0"
-          class="w-[10vw] h-[10vw]"
-        />
-        <span>关注</span>
-      </li>
-      <li>
-        <Icon
-          icon="ri:netease-cloud-music-fill"
-          style="color: #9195a0"
-          class="w-[10vw] h-[10vw]"
-        />
-        <span>社区</span>
-      </li>
-    </ul>
-  </div>
+  <TabBer></TabBer>
 </template>
 <script setup>
 import { Icon } from "@iconify/vue/dist/iconify";
 import HomePage from "@/views/HomePage.vue";
+import TabBer from "@/views/TabBer.vue";
 </script>
 <style scoped>
 input {
@@ -78,17 +36,5 @@ input {
   top: 0%;
   left: 9%;
   margin-top: 4px;
-}
-.btom {
-  width: 100vw;
-  height: 15vw;
-}
-
-li {
-  width: 20vw;
-  height: 15vw;
-  line-height: 10vw;
-  list-style: none;
-  float: left;
 }
 </style>
